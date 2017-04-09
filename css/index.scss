@@ -1,0 +1,139 @@
+/* Made with <3 in Germany */
+
+/* Variables */
+
+$gray: #bbb;
+$dark-gray: #999;
+
+$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Symbol";
+
+$tiny-text: 9pt;
+$small-text: 12pt;
+$text: 16pt;
+$large-text: 21pt;
+$huge-text: 37pt;
+
+$shadow: 0 4px 10px rgba(0, 0, 0, .2);
+$large-shadow: 0 20px 40px rgba(0, 0, 0, .2);
+
+/* Mixins */
+
+@mixin transition-set-up($property, $time, $easing) {
+	transition: $property $time $easing;
+	-webkit-transition: $property $time $easing;
+	-moz-transition: $property $time $easing;
+	-o-transition: $property $time $easing
+}
+
+@mixin gradient($firstGradientColor, $secondGradientColor) {
+  background: -webkit-linear-gradient(top, $firstGradientColor, $secondGradientColor);
+  background: -moz-linear-gradient(top, $firstGradientColor, $secondGradientColor);
+  background: -ms-linear-gradient(top, $firstGradientColor, $secondGradientColor);
+  background: -o-linear-gradient(top, $firstGradientColor, $secondGradientColor);
+  background: linear-gradient(top, $firstGradientColor, $secondGradientColor)
+}
+
+/* General */
+
+* {
+  margin: 0;
+  padding: 0;
+  color: #000;
+  font-family: $font;
+  font-size: $text;
+  text-decoration: none;
+  outline: none;
+  -webkit-tap-highlight-color: transparent
+}
+
+body {
+  padding: 5%;
+  font-size: $text;
+  text-align: center;
+  background: #fff
+}
+
+img {
+  width: 256px;
+}
+
+h1 {
+  margin: 0 0 20px 0;
+  font-size: $large-text
+}
+
+h2 {
+  margin: 0 0 10px 0;
+  font-size: $text;
+}
+
+p {
+  margin: 20px auto;
+  max-width: 400px;
+  line-height: 1.5
+}
+
+hr {
+  height: 1px;
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
+  border: none;
+}
+
+footer {
+  margin-top: 40px;
+
+  p, a {
+    margin: 0 auto;
+    color: $gray;
+    font-size: $small-text
+  }
+
+  a:hover {
+    color: $dark-gray
+  }
+}
+
+/* Classes */
+
+.button {
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: $shadow;
+  display: inline-block
+}
+
+.facebook-button {
+  color: #fff;
+  background: #4267b2;
+
+  &:hover {
+    background: #29487d;
+  }
+
+  &:active {
+    transform: scale(.95);
+    @include transition-set-up(transform, .2s, ease)
+  }
+}
+
+.imprint {
+  margin: 0 auto;
+  width: 70%;
+  text-align: left;
+
+  h1 {
+    font-size: $huge-text
+  }
+
+  h2 {
+    font-size: $large-text
+  }
+
+  p {
+    max-width: none
+  }
+}
