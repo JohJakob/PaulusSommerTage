@@ -99,9 +99,50 @@ footer {
 
 /* Classes */
 
+.event {
+  margin: 80px auto 0 auto;
+  padding: 80px 20px 20px 20px;
+  position: relative;
+  width: 70%;
+  border: 1px solid $gray;
+  border-radius: 8px;
+
+	a {
+		margin: 10px;
+		padding: 10px;
+		color: $dark-gray;
+		font-size: $small-text;
+		border: 1px solid $dark-gray;
+		border-radius: 6px;
+		display: inline-block;
+
+		&:hover {
+			color: #000;
+			border: 1px solid #000
+		}
+	}
+}
+
+.event-icon {
+  padding: 20px;
+  top: -52px;
+  position: absolute;
+  width: 64px;
+  background: #fff;
+  border: 1px solid $gray;
+  border-radius: 20px;
+  box-shadow: $shadow;
+  transform: translateX(-50%)
+}
+
+.event-date {
+	margin: 0 auto 10px auto;
+	font-style: italic
+}
+
 .button {
   padding: 15px;
-  border-radius: 5px;
+  border-radius: 6px;
   box-shadow: $shadow;
   display: inline-block
 }
