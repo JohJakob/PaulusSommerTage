@@ -2,14 +2,15 @@
 
 /* Variables */
 
-$gray: #bbb;
-$dark-gray: #999;
+$gray-color: #bbb;
+$dark-gray-color: #999;
+$red-color: #ff3b30;
 
-$font: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Symbol";
+$fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Symbol";
 
 $tiny-text: 9pt;
 $small-text: 12pt;
-$text: 16pt;
+$normal-text: 16pt;
 $large-text: 21pt;
 $huge-text: 37pt;
 
@@ -39,8 +40,8 @@ $large-shadow: 0 20px 40px rgba(0, 0, 0, .2);
   margin: 0;
   padding: 0;
   color: #000;
-  font-family: $font;
-  font-size: $text;
+  font-family: $fonts;
+  font-size: $normal-text;
   text-decoration: none;
   outline: none;
   -webkit-tap-highlight-color: transparent
@@ -48,7 +49,7 @@ $large-shadow: 0 20px 40px rgba(0, 0, 0, .2);
 
 body {
   padding: 5%;
-  font-size: $text;
+  font-size: $normal-text;
   text-align: center;
   background: #fff
 }
@@ -70,8 +71,9 @@ h1 {
 }
 
 h2 {
-  margin: 0 0 10px 0;
-  font-size: $text;
+  margin: 0 auto 10px auto;
+	max-width: 400px;
+  font-size: $normal-text;
 }
 
 p {
@@ -82,11 +84,11 @@ p {
 
 hr {
   height: 1px;
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
-  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
-  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
-  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
-  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, $gray 50%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
+  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
+  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
+  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
   border: none;
 }
 
@@ -95,56 +97,72 @@ footer {
 
   p, a {
     margin: 0 auto;
-    color: $gray;
+    color: $gray-color;
     font-size: $small-text
   }
 
   a:hover {
-    color: $dark-gray
+    color: $dark-gray-color
   }
 }
 
 /* Classes */
 
 .event {
-  margin: 80px auto 0 auto;
-  padding: 80px 20px 20px 20px;
-  position: relative;
+  margin: 40px auto 0 auto;
+  padding: 30px;
   width: 70%;
-  border: 1px solid $gray;
+	background: $red-color;
   border-radius: 8px;
+	box-shadow: $shadow;
+
+	h2, p {
+		color: #fff;
+		text-align: left
+	}
+
+	hr {
+	  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+	  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+	  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+	  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
+	  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%)
+	}
 
 	a {
-		margin: 10px;
 		padding: 10px;
-		color: $dark-gray;
+		color: #fff;
 		font-size: $small-text;
-		border: 1px solid $dark-gray;
+		border: 1px solid #fff;
 		border-radius: 6px;
 		display: inline-block;
 
 		&:hover {
-			color: #000;
-			border: 1px solid #000
+			color: $red-color;
+			background: #fff;
+			border: 1px solid #fff
 		}
 	}
 }
 
 .event-icon {
-  padding: 20px;
-  top: -52px;
-  position: absolute;
-  width: 64px;
-  background: #fff;
-  border: 1px solid $gray;
-  border-radius: 20px;
-  box-shadow: $shadow;
-  transform: translateX(-50%)
+	margin: 10px;
+	float: left;
+  width: 64px
 }
 
 .event-date {
 	margin: 0 auto 10px auto;
 	font-style: italic
+}
+
+.paulussommertage-text {
+	color: #fff;
+	text-transform: uppercase;
+
+	strong {
+		color: #fff
+	}
 }
 
 .button {
@@ -185,4 +203,13 @@ footer {
   p {
     max-width: none
   }
+}
+
+/* Mobile */
+
+@media screen and (max-width: 910px) {
+	.event-icon {
+		margin-bottom: 20px;
+		float: none
+	}
 }
