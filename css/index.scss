@@ -193,6 +193,10 @@ footer {
 .schedule {
 	width: 90%;
 
+	h1 {
+		text-transform: none
+	}
+
 	h2 {
 		font-size: $large-text;
 		font-weight: 400
