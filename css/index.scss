@@ -2,14 +2,14 @@
 
 // Variables
 
-$gray-color: #bbb;
-$dark-gray-color: #999;
-$red-color: #ff3b30;
-$orange-color: #ffa600;
-$green-color: #4cd964;
-$teal-blue-color: #69d2fb;
-$blue-color: #0091ff;
-$purple-color: #6b70de;
+$gray-color: #999;
+$dark-gray-color: #777;
+$red-color: #d50000;
+$orange-color: #ff6d00;
+$green-color: #009624;
+$light-blue-color: #0091ea;
+$blue-color: #2962ff;
+$purple-color: #aa00ff;
 
 $fonts: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Symbol";
 
@@ -54,64 +54,107 @@ $large-shadow: 0 20px 40px rgba(0, 0, 0, .2);
 }
 
 body {
-  padding: 5%;
+	font-family: $fonts;
   font-size: $normal-text;
   text-align: center;
-  background: #fff
+  background: #eee
 }
 
-img {
-  width: 256px;
-}
+header {
+	padding: 40px 0 0 0;
+	background: url("../images/panorama.jpg");
+	background-position: center;
+	background-size: cover;
 
-h1 {
-  margin: 0 0 20px 0;
-  font-size: $large-text;
-	font-weight: 600;
-	text-transform: uppercase;
+	img {
+		width: 256px
+	}
 
-	span {
+	p {
+		margin: 20px auto 40px auto;
+		max-width: 400px;
+		color: #fff;
+		font-family: "Oswald", $fonts;
 		font-size: $large-text;
-		font-weight: 800
 	}
 }
 
+h1 {
+	margin: 0;
+	padding: 20px 0;
+	color: #fff;
+  font-family: "Oswald", $fonts;
+	font-size: $large-text;
+	font-weight: 500;
+	background: rgba(0, 0, 0, .5);
+	-webkit-backdrop-filter: blur(10px)
+}
+
 h2 {
-  margin: 0 auto 10px auto;
-	max-width: 400px;
-  font-size: $normal-text
-}
-
-h3 {
-	text-align: left
-}
-
-p {
-  margin: 20px auto;
-  max-width: 400px;
-  line-height: 1.5
-}
-
-article, section {
-	margin: 40px auto
-}
-
-hr {
-  height: 1px;
-  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
-  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
-  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
-  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
-  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, $gray-color 50%, rgba(255, 255, 255, 0) 100%);
-  border: none;
-}
-
-strong {
+  padding: 40px 0;
+  font-size: $large-text;
 	font-weight: 600
 }
 
+h3 {
+	margin: 0 0 10px 0;
+	font-size: $normal-text;
+	font-weight: 800
+}
+
+main {
+	margin: 0 auto;
+	padding: 0 20px;
+	width: 100%;
+	max-width: 800px;
+	line-height: 1.5;
+	background: #fff;
+	box-shadow: $shadow;
+	transform: translateY(0);
+
+	& > p {
+		padding: 40px 0;
+		font-weight: 500
+	}
+}
+
+section {
+	margin: 0 -20px;
+	padding: 20px;
+	position: relative;
+	text-align: left;
+	background: #ddd;
+
+	h3, p, strong, a {
+		color: #fff
+	}
+
+	a {
+		text-decoration: underline
+	}
+}
+
+input[type=checkbox] {
+	display: none
+}
+
+label {
+	right: 16px;
+	bottom: 8px;
+	position: absolute;
+
+	path {
+		transform: rotate(0deg);
+		transform-origin: 16px 16px
+	}
+
+	&:hover circle {
+		fill: #fff
+	}
+}
+
 footer {
-  margin-top: 40px;
+  margin: 40px 20px;
 
   p, a {
     margin: 0 auto;
@@ -126,161 +169,11 @@ footer {
 
 // Classes
 
-.event {
-  padding: 30px;
-  width: 90%;
-	background: $red-color;
-  border-radius: 8px;
-	box-shadow: $shadow;
-
-	h2, p {
-		color: #fff;
-		text-align: left
-	}
-
-	hr {
-	  background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
-	  background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
-	  background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
-	  background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%);
-	  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, #fff 50%, rgba(255, 255, 255, 0) 100%)
-	}
-
-	a {
-		padding: 10px;
-		color: #fff;
-		font-size: $small-text;
-		border: 1px solid #fff;
-		border-radius: 6px;
-		display: inline-block;
-
-		&:hover {
-			color: $red-color;
-			background: #fff;
-			border: 1px solid #fff;
-			box-shadow: $shadow
-		}
-	}
+.logo {
+	display: none
 }
 
-.event-icon {
-	margin: 10px;
-	float: left;
-  width: 64px
-}
-
-.event-date {
-	margin: 0 auto 10px auto;
-	font-style: italic
-}
-
-.paulussommertage-text {
-	color: #fff;
-	text-transform: uppercase;
-
-	strong {
-		color: #fff
-	}
-}
-
-.button {
-  padding: 15px;
-  border-radius: 6px;
-  box-shadow: $shadow;
-  display: inline-block
-}
-
-.schedule {
-	width: 90%;
-
-	h1 {
-		text-transform: none
-	}
-
-	h2 {
-		font-size: $large-text;
-		font-weight: 400
-	}
-
-	h3 {
-		color: #fff
-	}
-
-	article {
-		position: relative;
-
-		& > p {
-			font-weight: 600;
-			text-align: left
-		}
-
-		& > svg {
-			display: none
-		}
-	}
-
-	div {
-		margin: 0 auto;
-		padding: 30px 30px 50px 30px;
-		position: relative;
-		border-radius: 8px;
-		box-shadow: $shadow;
-
-		p {
-			margin: 5px 0;
-			max-width: none;
-			color: #fff;
-			text-align: left
-		}
-
-		strong, a {
-			color: #fff;
-			font-weight: 600
-		}
-
-		a {
-			text-decoration: underline;
-			text-decoration-skip: edges
-		}
-	}
-
-	input[type=checkbox] {
-		display: none
-	}
-
-	label {
-		right: 16px;
-		bottom: 8px;
-		position: absolute;
-
-		path {
-			transform: rotate(0deg);
-			transform-origin: 16px 16px
-		}
-
-		&:hover circle {
-			fill: #fff
-		}
-	}
-}
-
-.schedule-red {
-	background: $red-color;
-
-	label:hover path {
-		stroke: $red-color
-	}
-}
-
-.schedule-orange {
-	background: $orange-color;
-
-	label:hover path {
-		stroke: $orange-color
-	}
-}
-
-.schedule-green {
+.section-green {
 	background: $green-color;
 
 	label:hover path {
@@ -288,15 +181,7 @@ footer {
 	}
 }
 
-.schedule-teal-blue {
-	background: $teal-blue-color;
-
-	label:hover path {
-		stroke: $teal-blue-color
-	}
-}
-
-.schedule-blue {
+.section-blue {
 	background: $blue-color;
 
 	label:hover path {
@@ -304,7 +189,15 @@ footer {
 	}
 }
 
-.schedule-purple {
+.section-red {
+	background: $red-color;
+
+	label:hover path {
+		stroke: $red-color
+	}
+}
+
+.section-purple {
 	background: $purple-color;
 
 	label:hover path {
@@ -312,9 +205,40 @@ footer {
 	}
 }
 
+.section-orange {
+	background: $orange-color;
+
+	label:hover path {
+		stroke: $orange-color
+	}
+}
+
+.section-light-blue {
+	background: $light-blue-color;
+
+	label:hover path {
+		stroke: $light-blue-color
+	}
+}
+
+.schedule-time {
+	margin: -20px -20px 20px -20px;
+	padding: 20px;
+	text-align: center;
+	font-weight: 800;
+	background: rgba(0, 0, 0, .2);
+	box-shadow: $shadow
+}
+
 .schedule-location {
+	margin-bottom: 10px;
 	font-size: $small-text;
 	font-style: italic
+}
+
+.schedule-description {
+	margin-bottom: 20px;
+	display: none
 }
 
 .schedule-mail {
@@ -337,22 +261,8 @@ footer {
 	}
 }
 
-.schedule-last:before {
-	display: none
-}
-
-.facebook-button {
-  color: #fff;
-  background: #4267b2;
-
-  &:hover {
-    background: #29487d;
-  }
-
-  &:active {
-    transform: scale(.95);
-    @include transition-set-up(transform, .2s, ease)
-  }
+.schedule-hint {
+	font-size: $small-text
 }
 
 .uppercase-text {
@@ -360,37 +270,65 @@ footer {
 	text-transform: uppercase
 }
 
-.hint {
-	font-size: $small-text
+.facebook-button {
+	margin-bottom: 40px;
+	padding: 15px;
+  color: #fff;
+  background: #4267b2;
+	border-radius: 8px;
+	box-shadow: $shadow;
+  display: inline-block;
+
+  &:hover {
+    background: #29487d
+  }
+
+  &:active {
+    transform: scale(.95);
+    transition: transform .2 ease
+  }
 }
 
 .imprint {
-  margin: 0 auto;
-  width: 90%;
+  margin: 40px;
   text-align: left;
+	line-height: 1.5;
+	background: #fff;
 
   h1 {
+		margin: 20px 0;
+		padding: 0;
+		color: #000;
+		font-family: $fonts;
     font-size: $huge-text;
-		text-transform: none
+		text-transform: none;
+		background: none
   }
 
   h2 {
+		margin: 20px 0;
+		padding: 0;
     font-size: $large-text
   }
 
-  p {
-    max-width: none
-  }
+	a:hover {
+		text-decoration: underline
+	}
+
+	footer {
+		text-align: center;
+		transform: translateY(0);
+	}
 }
 
-// Schedule
+// IDs
 
 #schedule-checkbox-1:checked {
 	& ~ .schedule-description-1 {
 		display: inherit
 	}
 
-	& ~ figure path {
+	& ~ label svg path {
 		transform: rotate(45deg);
 	}
 }
@@ -400,7 +338,7 @@ footer {
 		display: inherit
 	}
 
-	& ~ figure path {
+	& ~ label svg path {
 		transform: rotate(45deg);
 	}
 }
@@ -410,7 +348,7 @@ footer {
 		display: inherit
 	}
 
-	& ~ figure path {
+	& ~ label svg path {
 		transform: rotate(45deg);
 	}
 }
@@ -420,7 +358,7 @@ footer {
 		display: inherit
 	}
 
-	& ~ figure path {
+	& ~ label svg path {
 		transform: rotate(45deg);
 	}
 }
@@ -430,7 +368,7 @@ footer {
 		display: inherit
 	}
 
-	& ~ figure path {
+	& ~ label svg path {
 		transform: rotate(45deg);
 	}
 }
@@ -440,58 +378,37 @@ footer {
 		display: inherit
 	}
 
-	& ~ figure path {
+	& ~ label svg path {
 		transform: rotate(45deg);
 	}
 }
 
-.schedule-description {
-	display: none
-}
+// Medium + large screens
 
-// Mobile
+@media screen and (min-width: 737px) {
+	// General
 
-@media screen and (max-width: 910px) {
-	.event-icon {
-		margin-bottom: 20px;
-		float: none
-	}
-}
-
-@media screen and (min-width: 500px) {
-	.event, .imprint {
-		width: 80%
+	h1 {
+		padding: 20px 0 60px 0;
+		font-size: $huge-text
 	}
 
-	.schedule {
-		width: 80%;
+	main, footer {
+		transform: translateY(-40px)
+	}
 
-		article {
-			& > p {
-				margin: 30px 0 0 42px;
-				float: left
-			}
+	footer {
+		margin: 40px 20px 0 20px
+	}
 
-			& > svg {
-				top: 30px;
-				left: 0;
-				position: absolute;
-				display: inherit
-			}
+	// Classes
 
-			&:before {
-				top: 34px;
-				left: 14px;
-				position: absolute;
-				width: 4px;
-				height: calc(100% + 40px);
-				background: $blue-color;
-				content: ""
-			}
-		}
+	.logo {
+		display: inline-block
+	}
 
-		div {
-			margin: 0 auto 0 200px
-		}
+	.imprint {
+		margin: 40px auto;
+		width: 70%
 	}
 }
